@@ -23,6 +23,6 @@
     "random-name": "^0.1.2"
   },
   "dependencies": {
-    "random-mobile": "^1.0.2"
+    "random-mobile-numbers": "^1.0.1"
   }
 }
