@@ -4,6 +4,7 @@ import { userScenarios } from '../../../user-scenarios';
 
 const random = require('random-name');
 const randomEmail = require('random-email');
+const createMobilePhoneNumber = require("random-mobile-numbers");
 
 function fillOutTheLeadForm(loanDetails) {
     fillOutTheLoanInfo(loanDetails);
@@ -105,7 +106,7 @@ function fillOutTheBorrowerInfo(borrowerInfo) {
 function fillOutTheContacts() {
     cy.get('#first_name').type(random.first());
     cy.get('#last_name').type(random.last());
-    cy.get('#phone').type('8005553535');
+    cy.get('#phone').type(createMobilePhoneNumber('USA'));
     cy.get('#email').type(randomEmail({domain: 'peerstreet.com'}));
     cy.get('button').contains('Next').click();
 }
