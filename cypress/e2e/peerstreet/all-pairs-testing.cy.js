@@ -122,6 +122,8 @@ describe('', () => {
     })
    
     it('should create a lead: Residential Bridge - To finance an acquisition', () => {
+        cy.get('.sidebar-nav-text').click();
+        cy.get('#signInFormUsername').type('llkmlmklm', {force: true})
         fillOutTheLeadForm(userScenarios[0])
     })
 
