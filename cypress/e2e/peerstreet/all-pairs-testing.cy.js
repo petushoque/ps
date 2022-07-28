@@ -11,6 +11,7 @@ function fillOutTheLeadForm(loanDetails) {
     fillOutTheBorrowerInfo(loanDetails);
     fillOutTheContacts();
     selectRate();
+    startApplication();
 }
 
 function fillOutTheLoanInfo(loanDetails) {
@@ -113,7 +114,10 @@ function fillOutTheContacts() {
 
 function selectRate() {
     cy.get('input[name = "rate"]', { timeout: 15000 }).first().click( {force: true} );
-    cy.get('button').contains('Start your Application').click()
+}
+
+function startApplication() {
+    cy.get('button').contains('Start your Application').click();
 }
 
 describe('', () => {
@@ -122,8 +126,6 @@ describe('', () => {
     })
    
     it('should create a lead: Residential Bridge - To finance an acquisition', () => {
-        cy.get('.sidebar-nav-text').click();
-        cy.get('#signInFormUsername').type('llkmlmklm', {force: true})
         fillOutTheLeadForm(userScenarios[0])
     })
 
