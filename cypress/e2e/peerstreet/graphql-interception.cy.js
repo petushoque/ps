@@ -4,7 +4,7 @@ describe('', () => {
     })
    
     it('...', () => {
-        cy.get('div').contains('Residential Brodge', { timeout: 15000 }).click();
+        cy.get('div').contains('Residential Bridge', { timeout: 15000 }).click();
         cy.get('button').contains('Next').click();
         cy.get('div').contains('To finance an acquisition').click();
         cy.get('button').contains('Next').click();
