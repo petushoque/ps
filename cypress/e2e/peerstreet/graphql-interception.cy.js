@@ -40,9 +40,6 @@ describe('', () => {
         cy.wait('@getServerFailure').its('response.statusCode').should('be.oneOf', [500])
 
         cy.get('button').contains('Start your Application').click();
-        cy.get('#signInFormUsername').type('123', {force: true});
-        cy.get('#signInFormPassword').type('456', {force: true});
-        cy.get('input[name = "signInSubmitButton"]').click( {force: true, multiple: true} );
 
     })
 })
