@@ -4,6 +4,8 @@ describe('', () => {
     })
    
     it('...', () => {
+        cy.once('uncaught:exception', () => false);
+
         cy.get('div').contains('Residential Bridge', { timeout: 15000 }).click();
         cy.get('button').contains('Next').click();
         cy.get('div').contains('To finance an acquisition').click();
@@ -34,9 +36,11 @@ describe('', () => {
             { statusCode: 500 }
           ).as('getServerFailure')
 
-          cy.wait('@getServerFailure').its('response.statusCode').should('be.oneOf', [500])
+        cy.wait('@getServerFailure').its('response.statusCode').should('be.oneOf', [500])
 
         cy.get('button').contains('Start your Application').click();
+
+        cy.wait('@getServerFailure').its('response.statusCode').should('be.oneOf', [500])
 
         //cy.wait('@getServerFailure')
     })
