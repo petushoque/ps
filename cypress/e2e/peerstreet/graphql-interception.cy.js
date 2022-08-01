@@ -41,7 +41,7 @@ describe('', () => {
         cy.get('button').contains('Start your Application').click();
         cy.get('#signInFormUsername').type('123', {force: true});
         cy.get('#signInFormPassword').type('456', {force: true});
-        cy.get('input').contains('Sign in').click( {force: true} );
+        cy.get('input[name = "signInSubmitButton"]').click( {force: true, multiple: true} );
 
     })
 })
