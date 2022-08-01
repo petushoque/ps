@@ -39,9 +39,5 @@ describe('', () => {
         cy.wait('@getServerFailure').its('response.statusCode').should('be.oneOf', [500])
 
         cy.get('button').contains('Start your Application').click();
-
-        cy.wait('@getServerFailure').its('response.statusCode').should('be.oneOf', [500])
-
-        //cy.wait('@getServerFailure')
     })
 })
