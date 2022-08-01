@@ -1,5 +1,6 @@
 describe('', () => {
     beforeEach(() => {
+        cy.getHydraBorrowerCookie();
         cy.visit(`https://lenders-co.peersuite-staging.io/borrowers-ch172478/loan-scenarios`);
     })
    
