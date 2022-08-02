@@ -54,6 +54,8 @@ describe('Regression test for creating loan scenarios', () => {
         cy.get('#phone').type('1111112222');
         cy.get('#email').type('qa@qa.qa');
         cy.get('button').contains('Next').click();
+
+        cy.get('input[name="rate"]', { timeout: 15000 }).its('length').should('be.gte', 1)
     })
     
 })
