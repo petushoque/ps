@@ -39,3 +39,63 @@ Cypress.Commands.add('getHydraBorrowerCookie', () => {
 
   cy.log('HYDRA BORROWER AUTHENTICATION COMPLETE')
 })
+
+Cypress.Commands.add('createResidentialBridgeLoan', () => {
+  cy.get('div').contains('Residential Bridge', { timeout: 15000 }).click();
+  cy.get('button').contains('Next').click();
+  cy.get('div').contains('To finance an acquisition').click();
+  cy.get('button').contains('Next').click();
+  cy.get('#as_is_valuation').type('1200000');
+  cy.get('#down_payment').type('250000');
+  cy.get('#original_term').type('12');
+  cy.get('button').contains('Next').click();
+  cy.get('#zip_code').type('11111');
+  cy.get('button').contains('Next').click();
+  cy.get('div').contains('No').click();
+  cy.get('button').contains('Next').click();
+  cy.get('div').contains('760+').click();
+  cy.get('button').contains('Next').click();
+  cy.get('div').contains('6 or more').click();
+  cy.get('button').contains('Next').click();
+  cy.get('div').contains('As soon as possible').click();
+  cy.get('button').contains('Next').click();
+  cy.get('#first_name').type('qa');
+  cy.get('#last_name').type('qa');
+  cy.get('#phone').type('1111112222');
+  cy.get('#email').type('qa@qa.qa');
+  cy.get('button').contains('Next').click();
+})
+
+Cypress.Commands.add('createResidentialForRentLoan', () => {
+  cy.get('div').contains('Residential for Rent', { timeout: 15000 }).click();
+  cy.get('button').contains('Next').click();
+  cy.get('div').contains('To finance an acquisition').click();
+  cy.get('button').contains('Next').click();
+  cy.get('#zip_code').type('22222');
+  cy.get('#property_type').select('Single Family Residental (SFR)');
+  cy.get('#purchase_price').type('1150000');
+  cy.get('#estimated_value').type('1500000');
+  cy.get('button').contains('Next').click();
+  cy.get('#annual_tax').type('9100');
+  cy.get('#annual_insurance').type('845');
+  cy.get('#monthly_hoa_dues').type('100');
+  cy.get('button').contains('Next').click();
+  cy.get('input[name = "property_leased"]').first().click( {force: true} );
+  cy.get('#monthly_rent').type('5555');
+  cy.get('input[name = "professionally_managed"]').first().click( {force: true} );cy.get('input[name = "management_experience"]').first().click( {force: true} );
+  cy.get('button').contains('Next').click();
+  cy.get('#residency').select('US Citizen');
+  cy.get(`input[value = individual]`).click( {force: true} );
+  cy.get('button').contains('Next').click();
+  cy.get('div').contains('760+').click();
+  cy.get('button').contains('Next').click();
+  cy.get('div').contains('6 or more').click();
+  cy.get('button').contains('Next').click();
+  cy.get('div').contains('As soon as possible').click();
+  cy.get('button').contains('Next').click();
+  cy.get('#first_name').type('qa');
+  cy.get('#last_name').type('qa');
+  cy.get('#phone').type('2222223333');
+  cy.get('#email').type('qa@qa.qa');
+  cy.get('button').contains('Next').click();
+})
