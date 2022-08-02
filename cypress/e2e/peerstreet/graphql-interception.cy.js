@@ -41,5 +41,7 @@ describe('', () => {
 
         cy.get('button').contains('Start your Application').click();
 
+        
+
     })
 })
