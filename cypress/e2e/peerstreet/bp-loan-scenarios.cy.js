@@ -1,5 +1,5 @@
 import { lender } from '../../../credentials';
-import { lenderPortalStaging } from '../../../credentials'
+import { lenderPortalStaging } from '../../../env'
 
 describe('Regression test for creating loan scenarios', () => {
 
